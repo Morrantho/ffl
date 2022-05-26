@@ -95,11 +95,6 @@ ffl.isop=fn=>ffl.ops[ffl.a]==fn;
 ffl.eof=_=>ffl.i>=ffl.src.length;
 ffl.nop=_=>ffl.next();
 
-ffl.keyword=_=>
-{
-	ffl.next();
-}
-
 ffl.letter=_=>
 {
 	let buf=ffl.c;
