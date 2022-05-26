@@ -66,7 +66,7 @@ ffl.trie=
 };
 ffl.trie.add("^=",">>=",">=","<<=","<=","===","!==","&&","&=","||","|=","+=","-=","*=","/=","%=","^");
 
-ffl.init=src=>
+ffl.run=src=>
 {
 	ffl.src=src;
 	ffl.i=-1;
@@ -76,7 +76,7 @@ ffl.init=src=>
 	ffl.lex();
 	ffl.i=-1;
 	ffl.c=ffl.tokens[0];
-	ffl.parse();
+	return ffl.tokens;
 }
 
 ffl.next=(buf=``)=>
@@ -204,12 +204,4 @@ ffl.lex=_=>
 	while(!ffl.eof()) ffl.ops[ffl.a]();
 }
 
-ffl.parse=_=>
-{
-	for(let token of ffl.tokens)
-	{
-		console.log(token);
-	}
-}
-
-ffl.init(`console.log("Hello World") 32.12341 + {} this [*] is % a >> test ==`);
+ffl.run(`console.log("Hello World") 32.12341 + {} this [*] is % a >> test ==`);
