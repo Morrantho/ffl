@@ -204,4 +204,7 @@ ffl.lex=_=>
 	while(!ffl.eof()) ffl.ops[ffl.a]();
 }
 
-ffl.run(`console.log("Hello World") 32.12341 + {} this [*] is % a >> test ==`);
+console.log(ffl.run
+(`
+	console.log("Hello World") 32.12341 + {} this [*] is % a >> test ==
+`));
